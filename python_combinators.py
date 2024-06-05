@@ -46,5 +46,5 @@ minus =    lambda x, y: x - y
 sqr_root = lambda x:    x**0.5
 
 hypot = B1(sqr_root, psi(plus, square)) # BQN: Hypot ← √∘(+○(×˜))
-span = phi(minus, max, min)             # BQN: Span ← (⌈´-⌊´)
+span = phi(minus, max, min)             # BQN: Span ← ⌈´-⌊´
 
