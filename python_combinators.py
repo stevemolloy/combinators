@@ -40,11 +40,11 @@ def phi1(f, g, h):
 # Examples
 KI = K(I)
 
-square =     lambda x:    x**2
-plus =       lambda x, y: x + y
-difference = lambda x, y: x - y
-sqr_root =   lambda x:    x**0.5
+square =   lambda x:    x**2
+plus =     lambda x, y: x + y
+minus =    lambda x, y: x - y
+sqr_root = lambda x:    x**0.5
 
-hypot = B1(sqr_root, psi(plus, square)) # takes two numbers as input
-span = phi(difference, max, min)   # takes a single list as input
+hypot = B1(sqr_root, psi(plus, square)) # BQN: Hypot ← √∘(+○(×˜))
+span = phi(minus, max, min)             # BQN: Span ← (⌈´-⌊´)
 
