@@ -1,3 +1,6 @@
+# My attempt att summarising what I have learnt from:
+#    - https://raw.githubusercontent.com/codereport/Content/main/Publications/Combinatory_Logic_and_Combinators_in_Array_Languages.pdf
+
 def I(x):
     return x
 
