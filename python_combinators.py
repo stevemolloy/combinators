@@ -40,11 +40,15 @@ def phi1(f, g, h):
 # Examples
 KI = K(I)
 
-square =   lambda x:    x**2
+times =    lambda x, y: x * y
 plus =     lambda x, y: x + y
 minus =    lambda x, y: x - y
 sqr_root = lambda x:    x**0.5
+equals =   lambda x, y: x == y
+reverse =  lambda xs:   xs[::-1]
 
+square = W(times)                       # BQN: Square ← ×˜
 hypot = B1(sqr_root, psi(plus, square)) # BQN: Hypot ← √∘(+○(×˜))
 span = phi(minus, max, min)             # BQN: Span ← ⌈´-⌊´
+is_palindrome = S(equals, reverse)      # BQN: Is_palindrome ← ≡⟜⌽
 
