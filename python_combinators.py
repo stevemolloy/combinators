@@ -36,6 +36,7 @@ F = KI
 NOT = lambda x: x(F)(T)
 AND = lambda x: lambda y: x(y)(x)
 OR  = lambda x: lambda y: x(x)(y)
+XOR = lambda x: lambda y: x(NOT(y))(y)
 
 # Numerals
 church2int = lambda n: n(lambda x: x+1)(0) # Converts the Church numeral to Python int
