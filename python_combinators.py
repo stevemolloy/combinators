@@ -52,3 +52,11 @@ hypot = B1(sqr_root, psi(plus, square)) # BQN: Hypot ← √∘(+○(×˜))
 span = phi(minus, max, min)             # BQN: Span ← ⌈´-⌊´
 is_palindrome = S(equals, reverse)      # BQN: Is_palindrome ← ≡⟜⌽
 
+# Bools
+T = K
+F = KI
+
+NOT = lambda x: x(F)(T)
+AND = lambda x: lambda y: x(y)(x)
+OR  = lambda x: lambda y: x(x)(y)
+
