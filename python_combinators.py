@@ -13,29 +13,29 @@ def W(f):
 def C(f):
     return lambda x: lambda y: f(y)(x)
 
-def B(f, g):
-    return lambda x: f(g(x))
+def B(f):
+    return lambda g: lambda x: f(g(x))
 
-def B1(f, g):
-    return lambda x: lambda y: f(g(x)(y))
+def B1(f):
+    return lambda g: lambda x: lambda y: f(g(x)(y))
 
-def S(f, g):
-    return lambda x: f(x)(g(x))
+def S(f):
+    return lambda g: lambda x: f(x)(g(x))
 
-def D(f, g):
-    return lambda x: lambda y: f(x)(g(y))
+def D(f):
+    return lambda g: lambda x: lambda y: f(x)(g(y))
 
-def D2(f, g, h):
-    return lambda x: lambda y: f(g(x))(h(y))
+def D2(f):
+    return lambda g: lambda h: lambda x: lambda y: f(g(x))(h(y))
 
-def psi(f, g):
-    return lambda x: lambda y: f(g(x))(g(y))
+def psi(f):
+    return lambda g: lambda x: lambda y: f(g(x))(g(y))
 
-def phi(f, g, h):
-    return lambda x: f(g(x))(h(x))
+def phi(f):
+    return lambda g: lambda h: lambda x: f(g(x))(h(x))
 
-def phi1(f, g, h):
-    return lambda x: lambda y: f(g(x)(y))(h(x)(y))
+def phi1(f):
+    return lambda g: lambda h: lambda x: lambda y: f(g(x)(y))(h(x)(y))
 
 # Examples
 KI = K(I)
@@ -48,9 +48,9 @@ equals =   lambda x: lambda y: x == y
 reverse =  lambda xs:          xs[::-1]
 
 square = W(times)                       # BQN: Square ← ×˜
-hypot = B1(sqr_root, psi(plus, square)) # BQN: Hypot ← √∘(+○(×˜))
-span = phi(minus, max, min)             # BQN: Span ← ⌈´-⌊´
-is_palindrome = S(equals, reverse)      # BQN: Is_palindrome ← ≡⟜⌽
+hypot = B1(sqr_root)(psi(plus)(square)) # BQN: Hypot ← √∘(+○(×˜))
+span = phi(minus)(max)(min)             # BQN: Span ← ⌈´-⌊´
+is_palindrome = S(equals)(reverse)      # BQN: Is_palindrome ← ≡⟜⌽
 
 # Bools
 T = K
